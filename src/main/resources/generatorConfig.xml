@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--<classPathEntry location="E:\apache-maven-3.3.9\repository\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar"/>-->
+
+    <context id="generator" targetRuntime="MyBatis3">
+        <!--&lt;!&ndash; 数据Model属性对应Column获取插件 &ndash;&gt;-->
+        <!--<plugin type="com.itfsw.mybatis.generator.plugins.ModelColumnPlugin"/>-->
+        <!--&lt;!&ndash; 批量插入插件 &ndash;&gt;-->
+        <!--<plugin type="com.itfsw.mybatis.generator.plugins.BatchInsertPlugin">-->
+            <!--&lt;!&ndash;-->
+            <!--开启后可以实现官方插件根据属性是否为空决定是否插入该字段功能-->
+            <!--！需开启allowMultiQueries=true多条sql提交操作，所以不建议使用！插件默认不开启-->
+            <!--&ndash;&gt;-->
+            <!--<property name="allowMultiQueries" value="false"/>-->
+        <!--</plugin>-->
+
+        <!-- 逻辑删除插件 -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.LogicalDeletePlugin">
+            <!-- 这里配置的是全局逻辑删除列和逻辑删除值，当然在table中配置的值会覆盖该全局配置 -->
+            <!-- 逻辑删除列类型只能为数字、字符串或者布尔类型 -->
+            <property name="logicalDeleteColumn" value="is_deleted"/>
+            <!-- 逻辑删除-已删除值 -->
+            <property name="logicalDeleteValue" value="1"/>
+            <!-- 逻辑删除-未删除值 -->
+            <property name="logicalUnDeleteValue" value="0"/>
+            <!-- 逻辑删除常量名称，不配置默认为 IS_DELETED -->
+            <property name="logicalDeleteValue" value="1"/>
+            <!-- 逻辑删除常量（未删除）名称，不配置默认为 NOT_DELETED -->
+            <property name="logicalUnDeleteValue" value="0"/>
+        </plugin>
+        <commentGenerator>
+            <!--<property name="suppressAllComments" value="false"/>-->
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/db_seed?useUnicode=true&amp;characterEncoding=utf8"
+                        userId="root" password="qwer"/>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.company.project.biz.entity" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mybatis" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.company.project.biz.dao" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+
+        <!--<table tableName="atc_trade_log" domainObjectName="TradeLog"-->
+               <!--enableSelectByExample="true" enableDeleteByExample="false" enableCountByExample="true"-->
+               <!--enableUpdateByExample="true" enableDeleteByPrimaryKey="false">-->
+            <!--<property name="useActualColumnNames" value="false"/>-->
+            <!--&lt;!&ndash; DB column type tinyint to Integer &ndash;&gt;-->
+            <!--<columnOverride column="biz_type" javaType="Integer" />-->
+            <!--<columnOverride column="is_deleted" javaType="Integer" />-->
+        <!--</table>-->
+
+        <table tableName="user" domainObjectName="UserDO" mapperName="UserMapper"
+               enableSelectByExample="true" enableDeleteByExample="true" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByPrimaryKey="true">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="id" sqlStatement="JDBC"/>
+            <!-- DB column type tinyint to Integer -->
+
+        </table>
+    </context>
+</generatorConfiguration>
