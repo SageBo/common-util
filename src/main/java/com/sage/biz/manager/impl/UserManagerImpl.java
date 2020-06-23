@@ -1,11 +1,11 @@
-package com.wilson.biz.manager.impl;
+package com.sage.biz.manager.impl;
 
 
-import com.wilson.biz.dao.UserMapper;
-import com.wilson.biz.entity.UserDO;
-import com.wilson.biz.entity.UserDOExample;
-import com.wilson.biz.manager.AbstractManager;
-import com.wilson.biz.manager.UserManager;
+import com.sage.biz.dao.UserMapper;
+import com.sage.biz.entity.UserDO;
+import com.sage.biz.entity.UserDOExample;
+import com.sage.biz.manager.AbstractManager;
+import com.sage.biz.manager.UserManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

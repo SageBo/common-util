@@ -1,4 +1,4 @@
-package com.wilson.biz.manager;
+package com.sage.biz.manager;
 
 import java.util.List;
 

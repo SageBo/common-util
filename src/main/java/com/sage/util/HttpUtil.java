@@ -1,7 +1,7 @@
-package com.wilson.util;
+package com.sage.util;
 
 /**
- * Created by wilson on 2018/8/7.
+ * Created by sage on 2018/8/7.
  */
 public class HttpUtil {
 

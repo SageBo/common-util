@@ -1,4 +1,4 @@
-package com.wilson.util;
+package com.sage.util;
 
 import freemarker.template.TemplateExceptionHandler;
 
@@ -13,7 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by wilson on 2018/8/6.
+ * Created by sage on 2018/8/6.
  */
 public class Generator {
 

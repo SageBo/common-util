@@ -1,7 +1,7 @@
-package com.wilson.biz.manager;
+package com.sage.biz.manager;
 
 
-import com.wilson.biz.dao.BaseMapper;
+import com.sage.biz.dao.BaseMapper;
 
 import java.util.List;
 

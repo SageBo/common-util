@@ -2,11 +2,11 @@ package com.company.project.api;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.wilson.util.HttpUtil;
+import com.sage.util.HttpUtil;
 
 
 /**
- * Created by wilson on 2018/8/7.
+ * Created by sage on 2018/8/7.
  */
 public class TestApi {
 

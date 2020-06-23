@@ -1,4 +1,4 @@
-package com.wilson.biz.entity;
+package com.sage.biz.entity;
 
 import java.util.Date;
 
